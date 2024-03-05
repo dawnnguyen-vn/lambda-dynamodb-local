@@ -5,9 +5,9 @@ import { GetItemCommand } from "@aws-sdk/client-dynamodb";
 export const handler = async (event: APIGatewayProxyEvent): Promise<any> => {
   const client = new DynamoDBClient({region: 'us-east-1'});
   const command = new GetItemCommand({
-    TableName: 'phone-data',
+    TableName: 'my-dynamodb',
     Key: {
-      'phone': {S: '1'}
+      'id': {S: '1'}
     }
   });
 
@@ -24,7 +24,7 @@ export const handler = async (event: APIGatewayProxyEvent): Promise<any> => {
             return null;
         }
     } catch (error) {
-        console.error('Error retrieving item from DynamoDB:', error);
+        console.error('Error retrieving item from DynamoDBDDDDD:', error);
         throw error;
     }
 };

@@ -2,3 +2,4 @@
 /lambda/node_modules
 /lambda/dist
 function.zip
+.DS_Store
