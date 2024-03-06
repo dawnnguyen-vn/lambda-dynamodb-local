@@ -1,5 +1,5 @@
 /volume
 /lambda/node_modules
-/lambda/dist
-function.zip
+/lambda/package
+/lambda/function.zip
 .DS_Store
