@@ -4,9 +4,9 @@
 # Create DynamoDB
 awslocal dynamodb create-table \
     --table-name autocalling-test \
-    --key-schema AttributeName=依頼ID,KeyType=HASH \
-    --attribute-definitions AttributeName=依頼ID,AttributeType=N \
-    --billing-mode PAY_PER_REQUE
+    --key-schema AttributeName=request_id,KeyType=HASH \
+    --attribute-definitions AttributeName=request_id,AttributeType=N \
+    --billing-mode PAY_PER_REQUEST
 
 # Dump data into DynamoDB
 awslocal dynamodb batch-write-item \

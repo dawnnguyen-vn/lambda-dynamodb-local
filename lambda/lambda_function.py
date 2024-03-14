@@ -2,14 +2,21 @@ import boto3
 
 def lambda_handler(event, context):
     client = boto3.client('dynamodb')
-    
-    response = client.get_item(
+    response = client.update_item(
+        TableName='autocalling-test',
         Key={
-            '依頼ID': {
-                'N': '4660399',
+            'request_id': {
+                'N': '4452961'
             }
         },
-        TableName='autocalling-test',
+        UpdateExpression='SET #status = :status',
+        ExpressionAttributeNames={
+            '#status': 'status'
+        },
+        ExpressionAttributeValues={
+            ':status': {
+                'S': 'success'
+            }
+        }
     )
-    print(list(response['Item']['電話番号'].values())[0])
     return "success"
